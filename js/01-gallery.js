@@ -1,7 +1,7 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 const galleryList = document.querySelector(".gallery");
-// const markup = galleryItems.map(item => `<li><img src=${item.preview} alt="smth"/> <p>${item.description}</p></li>`).join("");
+galleryList.addEventListener(onclick)
 function markup(arr) {
     return arr.map(
         ({ preview, original, description }) => `<li class="gallery__item">
@@ -18,3 +18,8 @@ function markup(arr) {
 }
 galleryList.insertAdjacentHTML("beforeend", markup(galleryItems));
 console.log(galleryItems);
+// чернетка:
+const instance = basicLightbox.create(`
+    <p>You can set the content of the lightbox with JS.</p>
+`)
+// закриття по esc див testModule6R_2 рисіч
