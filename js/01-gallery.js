@@ -27,7 +27,6 @@ function onclick(evt) {
     return;
   }
   const urlOriginalImg = evt.target.dataset.source;
-  // console.log(urlOriginalImg);
 
   const options = {
     onShow: (instance) => {
