@@ -15,38 +15,3 @@ function markup(arr) {
 galleryList.insertAdjacentHTML("beforeend", markup(galleryItems));
 
 // console.log(galleryItems);
-// чернетка з першої частини
-galleryList.addEventListener("click", onclick);
-function onclick(evt) {
-    evt.preventDefault();
-    if (evt.target.nodeName !== "IMG") {
-        return;
-    }
-    const urlOriginalImg = evt.target.dataset.source;
-
-    const options = {
-        onShow: (instance) => {
-            document.addEventListener("keydown", escModalClosed);
-        },
-
-        onClose: (instance) => {
-            document.removeEventListener("keydown", escModalClosed);
-        },
-    };
-    const instance = basicLightbox.create(
-        `
-     <img
-      class="gallery__image"
-      src='${urlOriginalImg}'
-      alt='${urlOriginalImg}'
-    />`,
-        options
-    );
-    instance.show(() => console.log("lightbox now visible"));
-    function escModalClosed(evt) {
-        console.log(evt.code);
-        if (evt.code === "Escape") {
-            instance.close(() => console.log("HOHOHO you press ESC! lightbox now NOT visible"));
-        }
-    }
-}
