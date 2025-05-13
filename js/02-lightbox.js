@@ -15,3 +15,4 @@ function markup(arr) {
 galleryList.insertAdjacentHTML("beforeend", markup(galleryItems));
 
 // console.log(galleryItems);
+const lightBox = new SimpleLightbox('.gallery__link', { captionDelay: 250, captionsData: "alt", });
